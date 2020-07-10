@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input id="mount">
+    <select id="select1">
+        <option value="1">usd</option>
+        <option value="0.85">eu</option>
+        <option value="20000">vnd</option>
+    </select>
+    <select id="select2">
+        <option value="1">usd</option>
+        <option value="0.85">eu</option>
+        <option value="20000">vnd</option>
+    </select>
+    <button id="convert" onclick="convert()">convert</button>
+    <p id="result"></p>
+</body>
+<script>
+    function convert() {
+        let select1 = document.getElementById('select1').value;
+        let select2 = document.getElementById('select2').value;
+        let mount = document.getElementById('mount').value;
+        result = mount * select2 / select1;
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</html>
