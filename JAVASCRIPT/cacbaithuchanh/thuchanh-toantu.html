@@ -6,6 +6,41 @@
 
 </head>
 <body>
-<script src="js-toantu.js"></script>
+<input id="number1">
+<input id="number2">
+<button onclick="sun()">sun</button>
+<button onclick="sub()">sub</button>
+<button onclick="multi()">multi</button>
+<button onclick="divis()">divis</button>
+<p id="result">Result</p>
+<script>
+    function sun() {
+        let number1 = +document.getElementById('number1').value;
+        let number2 = +document.getElementById('number2').value;
+        let add = number1 + number2;
+        document.getElementById('result').innerHTML = add;
+    }
+    //
+    // function sub() {
+    //     let number1 = +document.getElementById('number1').value;
+    //     let number2 = +document.getElementById('number2').value;
+    //     let sub = number1 - number2;
+    //     document.getElementById('result').innerHTML = sub;
+    // }
+    //
+    // function multi() {
+    //     let number1 = +document.getElementById('number1').value;
+    //     let number2 = +document.getElementById('number2').value;
+    //     let multi = number1 * number2;
+    //     document.getElementById('result').innerHTML = multi;
+    // }
+    //
+    // function divis() {
+    //     let number1 = +document.getElementById('number1').value;
+    //     let number2 = +document.getElementById('number2').value;
+    //     let divis = number1 / number2;
+    //     document.getElementById('result').innerHTML = divis;
+    // }
+</script>
 </body>
 </html>
