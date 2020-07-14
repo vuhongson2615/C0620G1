@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game Puzzle</title>
+</head>
+<body>
+
+<img id='cat1' onclick="showImage1()" src="https://files.playerduo.com/production/images/cbf0d89b-0879-4fba-a3fa-0830c09fa36e__1589893348722__player_album.jpg" height="190px" width="190px"/></br>
+<img id='cat2' onclick="showImage2()" src="https://playerduo.com/api/upload-service/images/3693f2f1-18a3-4cb0-a9ad-9db7ddd3dcdb__06a48750-b2fc-11ea-a8b0-e3273f1fb5f1__player_album.jpg" height="190px" width="190px"/></br>
+<img id='cat3' onclick="showImage3()" src="https://playerduo.com/api/upload-service/images/51c2393c-4a0f-41a7-8059-a15ec7d94f8b__c6b734a0-c429-11ea-902f-874164afcf15__player_album.jpg" height="190px" width="190px"/></br>
+<img id='cat4' onclick="showImage4()" src="https://playerduo.com/api/upload-service/images/51c2393c-4a0f-41a7-8059-a15ec7d94f8b__816cb230-bc63-11ea-b1c3-a702ec1cd80f__player_album.jpg" height="190px" width="190px"/></br>
+<img id='cat5' onclick="showImage5()" src="https://playerduo.com/api/upload-service/images/51c2393c-4a0f-41a7-8059-a15ec7d94f8b__10201580-c056-11ea-b1c3-a702ec1cd80f__player_album.jpg" height="190px" width="190px"/></br>
+
+
+<script>
+    let numImg1 = 3;
+    let count1 = 1;
+
+    function showImage1() {
+        count1++;
+        document.getElementById('cat1').src = 'images/funny-cat1_part1x'+count1+'.jpg';
+        if (count1 == numImg1) {
+            count1 = 0;
+        }
+    }
+    function showImage2() {
+        count1++;
+        document.getElementById('cat2').src = 'images/funny-cat1_part2x'+count1+'.jpg';
+        if (count1 == numImg1) {
+            count1 = 0;
+        }
+    }
+    function showImage3() {
+        count1++;
+        document.getElementById('cat3').src = 'images/funny-cat1_part3x'+count1+'.jpg';
+        if (count1 == numImg1) {
+            count1 = 0;
+        }
+    }
+    function showImage4() {
+        count1++;
+        document.getElementById('cat4').src = 'images/funny-cat1_part4x'+count1+'.jpg';
+        if (count1 == numImg1) {
+            count1 = 0;
+        }
+    }
+    function showImage5() {
+        count1++;
+        document.getElementById('cat5').src = 'images/funny-cat1_part5x'+count1+'.jpg';
+        if (count1 == numImg1) {
+            count1 = 0;
+        }
+    }
+
+
+
+
+</script>
+
+</body>
+</html>
