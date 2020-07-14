@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt('Tiền doanh số tháng này của bạn là:');
+    a1 = a * 0.02;
+    a2 = a * 0.04;
+    a3 = a * 0.06;
+    a4 = a * 0.08;
+    if (a >= 30000000) {
+        alert('số tiền bạn nhận được: ' +a4);
+    } else if ( a < 30000000) {
+        alert('số tiền bạn nhận được: ' +a3);
+    } else if (a < 20000000) {
+        alert('số tiền bạn nhận được: ' +a2);
+    } else if (a < 10000000) {
+        alert('số tiền bạn nhận được: ' +a1);
+    }
+</script>
+</body>
+</html>

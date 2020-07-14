@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xep loai hoc luc hoc sinh</title>
+</head>
+<body>
+<script>
+    let a = +prompt('Điểm thi giữa kỳ:');
+    let b = +prompt('Điểm thi cuối:');
+    area = ((a + b * 2) / 3);
+    if (area >= 8) {
+        alert('Loại Giỏi');
+    } else if (area >= 6) {
+        alert('Loại Khá');
+    } else if (area >= 4) {
+        alert('Loại Trung Bình');
+    } else {
+        alert('Loại Yếu');
+    }
+</script>
+</body>
+</html>

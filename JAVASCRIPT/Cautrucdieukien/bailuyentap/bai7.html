@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt('Số phút gọi trong một tháng gia đình bạn là: ');
+    a1 = a * 800
+    a2 = a * 600
+    a3 = a * 400
+    a4 = a * 200
+
+    if (a>=4000) {
+        alert('Số tiền điện thoại trong tháng bạn là: ' +a4);
+    } else if (a < 4000) {
+        alert('Số tiền điện thoại trong tháng bạn là: ' +a3);
+    } else if (a < 2000) {
+        alert('Số tiền điện thoại trong tháng bạn là: ' +a2);
+    } else if (a < 1000) {
+        alert('Số tiền điện thoại trong tháng bạn là: ' +a1);
+    }
+</script>
+</body>
+</html>
