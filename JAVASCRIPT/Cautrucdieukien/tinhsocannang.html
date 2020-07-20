@@ -2,11 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
+
+<script>
+    let height = +prompt("nhap chieu cao cua ban");
+    let weight = +prompt("nhap can nang cua ban");
+    bmi = weight / (height ** 2);
+    if (bmi < 18) {
+        console.log
+        ("qua gay");
+    } else if (bmi < 25.0) {
+        console.log
+        ("binh thuong");
+    } else if (bmi < 30) {
+        console.log("beo");
+    } else {
+        console.log("beo nhu lon");
+    }
+</script>
 </body>
 </html>

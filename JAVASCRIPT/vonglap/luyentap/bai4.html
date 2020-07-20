@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let count = 0;
+    let sum = 0;
+    let number = "";
+    for (let i = 1; ; i++){
+        if (i %7 == 0){
+            number = number +i + "-";
+            sum = sum + i;
+            count++;
+            if (count == 30)
+                break;
+        }
+    }
+    document.write(number + "<br>");
+    document.write("Tong cua day so la: " +sum);
+
+</script>
+</body>
+</html>

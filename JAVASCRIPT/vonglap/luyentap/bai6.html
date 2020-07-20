@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Start() {
+        let numStart = +prompt("nhap so bat dau:");
+        let numEnd = +prompt("Nhap so ket thuc:");
+        let numRandom = Math.floor(Math.random() * (numEnd - numStart + 1) + numStart);
+        while (1) {
+            let numSelect = +prompt("nhap so ban du doan:");
+            if (numSelect < numRandom) {
+                alert('hay chon so khac lon hon');
+            } else if (numSelect > numRandom) {
+                alert('hay chon so khac nho hon');
+            } else {
+                alert('You Win!');
+                break;
+            }
+        }
+    }
+Start();
+</script>
+</body>
+</html>

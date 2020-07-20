@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function displayFiboList(quantity) {
+        let st1 = 0;
+        let st2 = 1;
+        let count = 2;
+        let sum = st1 + st2;
+        document.write("Day so fibonaci: " + st1 + st2);
+        while (count < quantity) {
+            let st3 = st1 + st2;
+            document.write(" " + st3);
+            count++;
+            sum += st3;
+            st1 = st2;
+            st2 = st3;
+        }
+        document.write("<br> Tong cac so trong day finbo: " + sum);
+    }
+
+    let number = +prompt("so cac so trong day fibo");
+    displayFiboList(number);
+
+    function displayDivide(quantity) {
+        let firstnum;
+        for (firstnum =1; firstnum <quantity; firstnum++){
+            if (firstnum %5 == 0){
+                document.write("<br> So dau tien chia het cho 5: "+firstnum);
+                break;
+            }
+        }
+    }
+    displayDivide(number);
+</script>
 </body>
 </html>

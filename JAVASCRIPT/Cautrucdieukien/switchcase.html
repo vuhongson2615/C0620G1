@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<input type="text" id="days" placeholder="nhap thang can kiem tra">&ensp;<button onclick="tinhngay()">Tinh so ngay</button>
+<p id="display"></p>
+<script>
+    function tinhngay() {
+        let days = +document.getElementById('days').value;
+        switch (days) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById('display').innerHTML = "thang" + days + "co 31 ngay";
+                break;
+            case 2:
+                document.getElementById('display').innerHTML = "thang" + days + "co 28 hoac 29 ngay";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById('display').innerHTML = "thang" + days + " co 30 ngay";
+                break;
+                default : alert("khong co thang nay dau nha dung co vo van")
+        }
+    }
+</script>
 </body>
 </html>

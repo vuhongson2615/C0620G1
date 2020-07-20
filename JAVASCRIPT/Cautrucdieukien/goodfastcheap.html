@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div class="container">
+    <input type="checkbox" id="good" onchange="changed(this.id)">
+    <label for="good"></label>Good</br>
+    <input type="checkbox" id="fast" onchange="changed(this.id)">
+    <label for="fast">Fast</label></br>
+    <input type="checkbox" id="cheap" onchange="changed(this.id)">
+    <label for="cheap">Cheap</label></br>
+</div>
+<script>
+    let good = document.getElementById('good');
+    let fast = document.getElementById('fast');
+    let cheap = document.getElementById('cheap');
+    function changed(id) {
+        switch (id) {
+            case "good":
+                if (fast.checked == true && cheap.checked == true) {
+                    cheap.checked = false;
+                }
+                break;
+            case "fast":
+                if (good.checked && cheap.checked) {
+                    good.checked = false;
+                }
+                break;
+            case "cheap":
+                if (fast.checked && good.checked == true) {
+                    fast.checked = false;
+                }
+                break;
+        }
+    }
+</script>
 </body>
 </html>
