@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <p>
+        <label>chuyen doi nhiet do</label>
+        <input id="inputtemperature"  placeholder="nhap nhiet do" oninput="temperature(this.value)">
+    </p>
+    <p>Celsius: <span id="resulttemperature"></span> </p>
+</form>
+<script>
+    function temperature(valnum) {
+        valnum = parseFloat(valnum).toFixed(3);
+        document.getElementById("resulttemperature").innerHTML = (valnum - 32) /.8;
+    }
+</script>
+</body>
+</html>
