@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function inputArray(marks) {
+        let N = +prompt("Nhap so phan tu cua mang: ");
+        for (let i = 0; i < N; i++) {
+            marks[i] = +prompt("Nhap phan tu thu " + i + ": ");
+        }
+    }
+    function findMaxValue(marks){
+        let max=false;
+        if(marks.length>0) {
+            max = marks[0];
+            count = 0
+            for (let i = 1; i < marks.length; i++) {
+                if (marks[i] > max) {
+                    max = marks[i];
+                    count = i
+                }
+            }
+            document.write("phan tu gia tri lon nhat la " + max + " vi tri " + count +"<br>");
+        }
+    }
+    function avg(marks){
+        let s=0;
+        let u=0;
+        for(let i=0;i<marks.length;i++){
+            s+=marks[i];
+        }
+        u=s/(marks.length);
+        document.write("gia tri trung bing cac phan tu trong mang la " +u);
+    }
+    let songuyen=new Array();
+    inputArray(songuyen);
+    findMaxValue(songuyen);
+    avg(songuyen);
+</script>
+</body>
+</html>

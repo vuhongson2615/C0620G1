@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function inputArray(marks) {
+        let N = +prompt("Nhap so phan tu cua mang: ");
+        for (let i = 0; i < N; i++) {
+            marks[i] = +prompt("Nhap phan tu thu " + i + ": ");
+        }
+    }
+    function daonguoc(marks) {
+        let first =0
+        let last =marks.length - 1;
+        while (first<last) {
+            let b = marks[first];
+            marks[first] = marks[last]
+            marks[last] = b;
+            first++;
+            last--;
+        }
+        document.write(marks);
+
+    }
+    let songuyen=new Array();
+    inputArray(songuyen);
+    daonguoc(songuyen);
+</script>
+</body>
+</html>

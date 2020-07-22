@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let myColor = ["Red", "Green", "White", "Black"];
+    myColor.join();
+    document.write("Chuỗi: " + myColor);
+
+    let numOrder = [1, 2, 8, 3, 4, 6, 5, 7, 10, 12];
+    let result = [numOrder[0]];
+    for (let i = 0; i < numOrder.length; i++) {
+        if ((numOrder[i] % 2 == 0) && (numOrder[i + 1] % 2 == 0)) {
+            result.push("-", numOrder[i + 1]);
+        } else {
+            result.push(numOrder[i + 1]);
+        }
+    }
+    document.write("<br>"+result.join(''));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function inputArray(a) {
+        let rows, cols;
+        rows = +prompt("Nhap so hang: ");
+        cols = +prompt("Nhap so cot: ");
+        for (let i = 0; i < rows; i++) {
+            a[i] = new Array();
+            for (let j = 0; j < cols; j++) {
+                a[i][j] = Math.floor(Math.random() * 100);
+            }
+        }
+    }
+
+    function displayArray(a) {
+        document.write("Cac phan tu trong mang la: <br>")
+        for (let i = 0; i < a.length; i++) {
+            for (let j = 0; j < a[i].length; j++) {
+                document.write(a[i][j] + "   ");
+
+            }
+            document.write("<br>");
+        }
+
+    }
+
+    let array2Dimen = new Array();
+    inputArray(array2Dimen);
+    displayArray(array2Dimen);
+</script>
+</body>
+</html>

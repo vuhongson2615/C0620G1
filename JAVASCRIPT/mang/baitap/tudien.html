@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let english = ["one", "two", "three", "four"];
+    let vietnamese = ["mot", "hai", "ba", "bon"];
+    let flag = false;
+    let DIC = prompt("nhap vao tu tieng viet ban muon tim")
+    for (let i = 0; i < vietnamese.length; i++) {
+        if (DIC == vietnamese[i]) {
+            flag == true;
+            alert(english[i])
+        }
+    }
+    if (!flag) {
+        alert('K co trong tu dien');
+    }
+
+</script>
+</body>
+</html>

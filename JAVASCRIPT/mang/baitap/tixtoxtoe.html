@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Caro</title>
+    <style>
+        button{
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #row {
+            width: 30px;
+            height: 15px;
+        }
+
+        #col {
+            width: 30px;
+            height: 15px;
+        }
+        table{
+            cellspacing: 3px;
+            cell-padding: 1px;
+            border: 1px;
+        }
+        #play{
+            margin: 5px;
+            width: 90px;
+        }
+        button{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .color1{
+            color: blue;
+        }
+        .color2{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="row" value="10"> Row
+<input type="text" id="col" value="10"> Col<br>
+<button id="play" onclick="playgame();">PlayGame</button><br>
+
+<div id="main"></div>
+<script>
+    let maxRow = 10;
+    let maxCol = 10;
+    let str;
+    function drawBoardGame(rows, cols) {
+        str = "<table >";
+        for (let i = 0; i < rows; i++) {
+            str += "<tr>";
+            for (let j = 0; j < cols; j++) {
+                str += "<td>";
+                str += `<button id ='cell-${i}${j}' onclick='clickCell(this,${i},${j});'></button>`;
+                str += "</td>"+i+""+j+"</td>";
+            }
+            str += "</tr>";
+        }
+        str += "</table>";
+        return str;
+    }
+
+    function playgame() {
+        maxRow = document.getElementById("row").value;
+        maxCol = document.getElementById("col").value;
+        document.getElementById("main").innerHTML = drawBoardGame(maxRow, maxCol);
+    }
+
+    let turn =1;
+    function clickCell(cell,x,y) {
+        if (cell.innerHTML === ''){
+            if (turn === 1 ){
+                cell.innerHTML = "x";
+                cell.classList.add("color1");
+                turn = 2;
+            } else {
+                cell.innerHTML = "o";
+                cell.classList.add("color2");
+                turn = 1;
+            }
+        }
+        checkWin(x,y);
+    }
+
+    function getCell(x,y) {
+        let value = document.getElementById("cell-"+x+y).innerHTML;
+        return value;
+    }
+    function checkWin(x,y) {
+        checkNgang(x,y);
+        checkDoc(x,y);
+        checkCheo1(x,y);
+        checkCheo2(x,y);
+    }
+    function checkNgang(x,y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        if(y+i < maxRow){
+            while (getCell(x, y) === getCell(x, y + i)) {
+                count++;
+                i++;
+            }
+        }
+        while (getCell(x,y) === getCell(x,y-j)){
+            count++;
+            j++;
+        }
+        gameOver(count);
+
+    }
+    function checkDoc(x,y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while (getCell(x,y) === getCell(x+i,y)){
+            count++;
+            i++;
+        }
+        while (getCell(x,y) === getCell(x-j,y)){
+            count++;
+            j++;
+        }
+        gameOver(count);
+
+    }
+    function checkCheo1(x,y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while (getCell(x,y) === getCell(x+i,y+i)){
+            count++;
+            i++;
+        }
+        while (getCell(x,y) === getCell(x-j,y-j)){
+            count++;
+            j++;
+        }
+        gameOver(count);
+
+    }
+    function checkCheo2(x,y) {
+        let count = 1;
+        let i = 1;
+        let j = 1;
+        while (getCell(x,y) === getCell(x+i,y-i)){
+            count++;
+            i++;
+        }
+        while (getCell(x,y) === getCell(x-j,y+j)){
+            count++;
+            j++;
+        }
+        gameOver(count);
+
+    }
+    function gameOver(count) {
+        if(count==5){
+            alert("Win roi");
+        }
+    }
+    drawBoardGame();
+    playgame();
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function inputArray(marks) {
+        let N = +prompt("Nhap so phan tu cua mang: ");
+        for (let i = 0; i < N; i++) {
+            marks[i] = +prompt("Nhap phan tu thu " + i + ": ");
+        }
+    }
+
+    function timSonguyen(marks) {
+        let V = +prompt("Nhap so nguyen can tim")
+        let flag = false;
+        for (let i = 0; i < marks.length; i++) {
+            if (V == marks[i]) {
+                flag = true;
+                alert("V is in the array");
+                break;
+            }
+        }
+        if (!flag) {
+            alert("V is not in the array");
+        }
+    }
+    let songuyen = new Array();
+    inputArray(songuyen);
+    timSonguyen(songuyen)
+</script>
+</body>
+</html>

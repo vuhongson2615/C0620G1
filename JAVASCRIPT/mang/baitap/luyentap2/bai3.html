@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function inputArray(marks) {
+        let N = prompt("Nhap so phan tu cua mang: ");
+        for (let i = 0; i < N; i++) {
+            marks[i] = prompt("Nhap phan tu thu " + i + ": ");
+        }
+    }
+    let arr =new Array();
+    inputArray(arr);
+    let a=arr.join("");
+    let result=a.length;
+    document.write("so ky tu trong mang la "+result);
+
+</script>
+</body>
+</html>

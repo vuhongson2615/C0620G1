@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="f">
+    <textarea name="text" cols="30" rows="10" onkeydown="keyboard();"></textarea><br><br>
+</form>
+<script>
+    let str = "ToihoclaptrinhtaiCodeGym!!!";
+    let res = [];
+    let newres = "";
+    for (i = 0; i < str.length; i++) {
+        res[i] = str.slice(i, i + 1);
+    }
+    document.write("chuoi res la :"+res + "<br><br>");
+    document.write("Do dai chuoi (res) la: " + res.length + "<br><br>");
+
+    function keyboard() {
+        lineofwriting = document.f.text.value;
+        leng = lineofwriting.length;
+        if (leng > 0) {
+            for (let i = 0; i < leng; i++) {
+                newres = newres + res[i];
+                if (i == res.length) {
+                    document.f.text.value = "";
+                    newres = "";
+                }
+            }
+        }
+        document.f.text.value = newres;
+        newres = "";
+        setTimeout("keyboard()",1);
+    }
+    keyboard();
+</script>
+
+</body>
+</html>
