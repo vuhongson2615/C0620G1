@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jsmobile.js"></script>
+</head>
+<style>
+    #inboxIp{height: 100px;width: 200px}
+    #inboxSs{height: 100px;width: 200px}
+    #outboxIp{height: 100px;width: 200px}
+    #outboxSs{height: 100px;width: 200px}
+    #sendIp{height: 50px;width: 100px}
+    #sendSs{height: 50px;width: 100px}
+
+</style>
+<body>
+
+<div class="moblie">
+    <h1>SamSung</h1>
+    <textarea id="inboxSs">
+        inbox
+    </textarea>
+    <textarea id="outboxSs">
+        outbox
+    </textarea>
+    <input id="sendSs" placeholder="mess here" oninput="samsung.writeMess(this.value)">
+    <button onclick="sendMess(samsung,iphone)">send</button>
+</div>
+
+<div class="moblie">
+    <h1>Iphone</h1>
+    <textarea id="inboxIp">
+        inbox
+    </textarea>
+    <textarea id="outboxIp">
+        outbox
+    </textarea>
+    <input id="sendIp" placeholder="mess here" oninput="iphone.writeMess(this.value)">
+    <button onclick="senMess(iphone,samsung)">send</button>
+</div>
+
+<script>
+    let samsung = new Mobile("S10");
+    let iphone = new Mobile("12S");
+
+    function sendMess(mobile1,mobile2) {
+        mobile1.sendMess(mobile2);
+
+        document.getElementById("outboxSs").innerHTML = samsung.MessOutput;
+        document.getElementById("inboxIp").innerHTML = iphone.MessInput;
+        document.getElementById("sendSs").value = "";
+    }
+    function senMess(mobile1,mobile2) {
+        mobile1.sendMess(mobile2);
+
+        document.getElementById("outboxIp").innerHTML = iphone.MessInput;
+        document.getElementById("inboxSs").innerHTML = samsung.MessOutput;
+        document.getElementById("sendIp").value = "";
+    }
+
+</script>
+</body>
+</html>
+</script>

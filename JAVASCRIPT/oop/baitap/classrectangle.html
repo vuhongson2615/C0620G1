@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border: 1px solid #d3d3d3;"></canvas>
+
+<script>
+      function Rectangle(x, y, width, height) {
+        this.width = width;
+        this.height = height;
+        this.x = x;
+        this.y = y;
+
+        this.getx = function () {
+            return this.x
+        }
+        this.gety = function () {
+            return this.y
+        }
+        this.getWidth = function () {
+            return this.width;
+        }
+        this.getHeight = function () {
+            return this.height;
+        }
+        this.getPerimeter = function () {
+            return 2*(this.width + this.height);
+        }
+        this.getAcreage = function () {
+            return this.width * this.height;
+        }
+
+    }
+
+    let rectangle = new Rectangle(100,100,150,80);
+    let x = rectangle.getx()
+    let y = rectangle.gety()
+    let width = rectangle.getWidth();
+    let height = rectangle.getHeight();
+    let perimeter = rectangle.getPerimeter();
+    let acreage = rectangle.getAcreage();
+
+    alert(`Chiều dài: ${width}, chiều rộng ${height}, chu vi: ${perimeter}, diện tích: ${acreage}`);
+
+    function getRandomHex() {
+        return Math.floor(Math.random() * 255);
+    }
+
+    function getRandomColor() {
+        let red = getRandomHex();
+        let blue = getRandomHex();
+        let green = getRandomHex();
+
+        return "rgb(" + red + "," + blue + "," + green + ")";
+
+    }
+
+    function creatRectangle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        let color = getRandomColor();
+        let rectangle = new Rectangle(x, y, width, height);
+        ctx.beginPath();
+        ctx.rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        ctx.fillStyle = color;
+        ctx.fill();
+
+    }
+
+    creatRectangle();
+
+
+</script>
+
+
+</body>
+</html>

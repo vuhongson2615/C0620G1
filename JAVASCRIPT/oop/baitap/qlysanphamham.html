@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child() {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<h1>Add New Product</h1>
+<input id="addProduct" type="text" placeholder="Product">
+<input id="addColor" type="text" placeholder="Color">
+<input id="addPrice" type="text" placeholder="Price">
+<input id="addTextarea" type="text" placeholder="Textarea">
+<button onlick="addButton()">Add</button>
+
+<h1>Display All Product</h1>
+
+<table id="listProduct"></table>
+
+<script>
+
+    class ListProduct {
+        constructor(product, color, price, textarea) {
+            this.product = product;
+            this.color = color;
+            this.price = price;
+            this.textarea = textarea;
+        }
+
+        getProduct() {
+            return this.product;
+        }
+
+        getColor() {
+            return this.color;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        getTextarea() {
+            return this.textarea
+        }
+    }
+
+    let listProduct = new ListProduct("Iphone 6", "Gray", "10.000.000", "New")
+    let product = listProduct.getProduct();
+    let color = listProduct.getColor();
+    let price = listProduct.getPrice();
+    let textarea = listProduct.getTextarea();
+
+    function display() {
+        let str = "";
+        str += `<td>${product}</td>`
+        str += `<td>${color}</td>`
+        str += `<td>${price}</td>`
+        str += `<td>${textarea}</td>`
+        str += `<td><button onclick="editProduct()">Edit</button></td><td><button onclick="deleteProduct()">Delete</button></td>`
+
+        document.getElementById("listProduct").innerHTML = str;
+    }
+    function addButton() {
+        let product1 = document.getElementById("addProduct").value;
+        let color1 = document.getElementById("addColor").value;
+        let price1 = document.getElementById("addPrice").value;
+        let textarea1 = document.getElementById("addTextarea").value;
+
+        listProduct.push(product1,color1,price1,textarea1)
+        display()
+    }
+
+
+
+
+
+
+    display()
+</script>
+
+</body>
+</html>

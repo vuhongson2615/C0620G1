@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .moblie {
+            width: 400px;
+            /*height: 600px;*/
+            border: 1px solid;
+            display: inline-block;
+        }
+
+        ​
+        p.name {
+            border: 1px solid;
+            margin: 0;
+            text-align: center;
+            font-size: 35px;
+        }
+
+        ​
+        .inbox {
+            width: 100%;
+            height: 150px;
+            background-color: lightgrey;
+        }
+
+        .outbox {
+            width: 100%;
+            height: 150px;
+            background-color: #abcc8d;
+        }
+
+        input {
+            width: 340px;
+            margin: 10px 0;
+            padding-left: 5px;
+            margin-left: 5px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<div class="moblie">
+    <p class="name" id="iphone-name">iphone</p>
+    <p id="iphone-battery"></p>
+    <textarea placeholder="inbox" class="inbox" id="iphone-inbox">Inbox</textarea>
+    <textarea placeholder="outbox" class="outbox" id="iphone-outbox">Outbox</textarea>
+    <input oninput="iphone.writeMsg(this.value)" id="iphone-msg">
+    <button onclick="sendMsg(iphone,oppo)">Send</button>
+</div>
+<div class="moblie">
+    <p class="name" id="oppo-name">Oppo</p>
+    <p id="oppo-battery"></p>
+    <textarea placeholder="inbox" class="inbox" id="oppo-inbox">Inbox</textarea>
+    <textarea placeholder="outbox" class="outbox" id="oppo-outbox">Outbox</textarea>
+    <input oninput="oppo.writeMsg(this.value)" id="oppo-msg">
+    <button onclick="sendMsg(oppo,iphone)">Send</button>
+
+    <script>
+        class Mobile {
+            constructor(name) {
+                this.name = name;
+                this.msg = "";
+                this.inbox = [];
+                this.outbox = [];
+                this.battery = 100;
+
+            }
+            writeMsg(msg) {
+                this.msg = msg;
+            }
+            sendMsg(mobile) {
+                if (this.battery <=0) return;
+                this.outbox.push(this.msg);
+                mobile.receiveMsg(this.msg);
+                this.battery--
+            }
+            receiveMsg(msg) {
+                this.inbox.push(msg)
+            }
+
+        }
+        let iphone = new Mobile("Iphone Pro Max 11");
+        let oppo = new Mobile("Oppo Reno");
+
+
+        display();
+        function sendMsg(mobile1,mobile2) {
+            mobile1.sendMsg(mobile2);
+            display();
+        }
+
+        function display() {
+            document.getElementById("iphone-inbox").innerHTML = iphone.inbox;
+            document.getElementById("iphone-outbox").innerHTML = iphone.outbox;
+            document.getElementById("oppo-outbox").innerHTML = oppo.outbox;
+            document.getElementById("oppo-inbox").innerHTML = oppo.inbox;
+            document.getElementById("iphone-msg").value = "";
+            document.getElementById("oppo-msg").value = "";
+            document.getElementById("iphone-battery").innerHTML = iphone.battery;
+            document.getElementById("oppo-battery").innerHTML = oppo.battery;
+        }
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function Temperature(celsius) {
+        this.celsius = celsius;
+
+        this.getcelsius = function () {
+            // if (this.celsius < -273){
+            //     alert("Vui lòng nhập nhiệt độ trên -273")
+            // }
+            return this.celsius;
+        }
+        this.swapcelsius_fahrenheit = function () {
+            return (9* this.celsius)/5 + 32
+        }
+        this.swapcelsius_kenvin = function () {
+            return 273.15 + this.celsius;
+        }
+    }
+
+    let temperature = new Temperature(-300)
+
+    let celsius = temperature.getcelsius()
+    let swapcf = temperature.swapcelsius_fahrenheit()
+    let swapck = temperature.swapcelsius_kenvin()
+
+    alert(`Với ${celsius} độ C thì tương đương với ${swapcf} độ F và ${swapck} độ K`);
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
